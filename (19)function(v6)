@@ -1,0 +1,33 @@
+=======================app.js====================
+var flipkart=require("./firstModule.js");
+
+//print(123,456);
+
+flipkart.add({"id":123,"name":"Mobile","price":2500});
+flipkart.add({"id":42,"name":"Laptop","price":2700});
+flipkart.add({"id":1232,"name":"oven","price":2570});
+
+var items = flipkart.get();
+items.forEach(function(e,i){
+	console.log(e);
+}) 
+=====================firstModule.js===================
+module.exports=(function() {
+	var cart=[];
+	//these function are private to module
+	function addToCart(item)
+	{
+		cart.push(item);
+	}
+
+	function getAllItems() 
+	{
+		return cart;
+	}
+	
+	return{
+		add: addToCart,
+		get: getAllItems
+	}
+
+})()
