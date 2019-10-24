@@ -41,6 +41,11 @@ this.delete=function(id){
 exports.title ="DAC MEAN Stack Course";//global variable
 exports.developedBy="Phaniraj BN";//global variable
 exports.developedOn= new Date();//global variable
-
+===============output===================
+{ employee: [Function],
+  empApp: undefined,
+  title: 'DAC MEAN Stack Course',
+  developedBy: 'Phaniraj BN',
+  developedOn: 2019
 
 
