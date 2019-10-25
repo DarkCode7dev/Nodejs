@@ -1,0 +1,9 @@
+var http = require("http");
+
+var server = http.createServer(function(request,response){
+	response.write("Hello HTTP");
+	response.end();
+});
+server.listen(1234); 
+===================comment 
+open browser and type locahost:1234
