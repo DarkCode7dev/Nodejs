@@ -1,7 +1,6 @@
 ===============builtInModules.js=============
 var fs = require("fs");
-/*var data=fs.readFileSync("app.js","utf8");
-console.log(data);*/
+
 fs.readFile("builtInModules.js",'utf8',function(err,data) {
 
 	console.log(data);
@@ -14,3 +13,5 @@ fs.appendFile(filename,"//This line is added",function(err){
 });//This line is added//This line is added
 ===============output=============
 //This line is added (this line will be added every time)
+=======================url to understand better=============
+https://www.tutorialkart.com/nodejs/node-js-append-data-to-file/
