@@ -1,0 +1,6 @@
+var util=require("util");
+var name="Phaniraj";
+var age=42;
+var address="R.R Nagar,Bangalore";
+var msg= util.format("My Name is %s from %s and my age is %d years",name,address,age);
+console.log(msg);
