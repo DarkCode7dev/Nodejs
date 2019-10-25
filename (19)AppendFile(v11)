@@ -12,3 +12,5 @@ console.log("is this last file");
 fs.appendFile(filename,"//This line is added",function(err){
 	if(err)console.log(err);
 });//This line is added//This line is added
+===============output=============
+//This line is added (this line will be added every time)
