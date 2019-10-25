@@ -1,0 +1,77 @@
+===========builtInModules.js===============
+var fs = require("fs");
+var data=fs.readFileSync("app.js","utf8");
+console.log(data);
+=================NameModule.js=================
+module.exports.employee =function(id,name,address){
+	this.empid=id;
+	this.empName=name;
+	this.empAddress=address;
+}
+//class will have module.export infront of it
+module.exports.empApp=(function() {
+  employees=[];
+
+//these are function
+	addEmp=function(emp){
+		employees.push(emp);
+
+	}
+//these are function
+	find=function(id){
+			return employees.find((e)=>e.empid==id);
+	}
+//these are function
+	findAll=function(){
+		return employees;
+	}
+//these are function
+remove=function(id){
+	for (var i = 0; i < employees.length; i++) {
+		if(employees[i].empid==id){
+			employees.splice(i,1);//delete item
+			return;
+
+		}
+	}
+}
+
+
+		return{
+			addEmp : addEmp,
+			find : find,
+			findAll : findAll,
+			remove : remove
+		}
+	
+})();
+exports.title ="DAC MEAN Stack Course";//global variable
+exports.developedBy="Phaniraj BN";//global variable
+exports.developedOn= new Date();//global variable
+================app.js========================================
+require("./SimpleFile.js");
+var flipkart=require("./firstModule.js");
+var app = require("./NameModule.js");
+var repository = app.empApp;
+
+function getDateFormat(date){
+	var info=date.getDate() + "/" + (date.getMonth()+1) + "/" + date.getFullYear();
+	return info;
+}
+
+
+console.log("This app was developed for" + app.title);
+console.log("This app was developed for" + getDateFormat(app.developedOn));
+var emp = new app.employee(123,"Phaniraj","Bangalore");//emloyyee is not amself  invoking objedct so we have to create new object by using new
+repository.addEmp(emp);
+var emp2 = new app.employee(125,"raj","Bangalore");
+repository.addEmp(emp2);
+var data = repository.findAll();
+data.forEach(function(e,i){
+	console.log(e.empName);
+})
+
+
+
+
+
