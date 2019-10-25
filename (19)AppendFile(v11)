@@ -1,0 +1,14 @@
+===============builtInModules.js=============
+var fs = require("fs");
+/*var data=fs.readFileSync("app.js","utf8");
+console.log(data);*/
+fs.readFile("builtInModules.js",'utf8',function(err,data) {
+
+	console.log(data);
+})
+
+var filename="builtInModules.js"
+console.log("is this last file");
+fs.appendFile(filename,"//This line is added",function(err){
+	if(err)console.log(err);
+});//This line is added//This line is added
