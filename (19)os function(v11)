@@ -1,0 +1,8 @@
+===============builtInModules.js=============
+var os=require("os");
+console.log(os.type());
+console.log(os.uptime());
+console.log(os.hostname());
+
+console.log("Platform: " + os.platform());
+console.log("Architecture: " + os.arch());
