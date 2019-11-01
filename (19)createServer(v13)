@@ -1,0 +1,10 @@
+var http =require("http");
+var fs=require('fs');
+var join=require('path').join;
+
+http.createServer((req,res)=>{
+	console.log("Server is running at port:1234");
+	res.end("test");
+}).listen(1234);
+==========================comment
+we have to press ctrl+ c before running it again and again
